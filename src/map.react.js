@@ -659,7 +659,7 @@ export default class MapGL extends Component {
           onZoomEnd ={ this._onZoomEnd }
           width ={ this.props.width }
           height ={ this.props.height }
-          map={ this._getMap() }>
+          map={ this._map }>
 
           { content }
 
