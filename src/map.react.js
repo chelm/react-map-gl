@@ -639,7 +639,7 @@ export default class MapGL extends Component {
         style={ mapStyle } className={ className }/>,
       <div key="overlays" className="overlays"
         style={ {position: 'absolute', left: 0, top: 0} }>
-        { React.Children.map( this.props.children, ( child ) => React.cloneElement( child, { map: this._map }) ) }
+        { React.Children.map( this.props.children, ( child ) => React.cloneElement( child, { getMap: this._getMap }) ) }
       </div>
     ];
 
@@ -658,8 +658,7 @@ export default class MapGL extends Component {
           onZoom ={ this._onZoom }
           onZoomEnd ={ this._onZoomEnd }
           width ={ this.props.width }
-          height ={ this.props.height }
-          map={ this._map }>
+          height ={ this.props.height }>
 
           { content }
 
